@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Users, UserStates } = require('../../models');
+const { Users, User_states } = require('../../models');
 const Authorize = require('../../utils/auth');
 
 
 router.get('/', async (req, res) => {
     try {
         const userData = await Users.findAll({
-            include: [UserStates] 
+            include: [User_states] 
         });
         res.status(200).json(userData);
     } catch (err) {
@@ -20,7 +20,7 @@ router.get('/:id', async (req, res) => {
     try {
         const oneUser = await Users.findOne({
             where: {id: req.params.id},
-            include: [UserStates] 
+            include: [User_states] 
         });
         res.status(200).json(oneUser);
     } catch (err) {
