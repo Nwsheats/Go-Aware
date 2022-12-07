@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Users, UserStates } = require('../../models');
+const { Users, User_states } = require('../../models');
 
 
 router.get('/:id', async (req, res) => {
     try {
-        const userStateData = await UserStates.findOne({
+        const userStateData = await User_states.findOne({
             where: {id: req.params.id},
             include: [Users] 
         });
@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const newState = await UserStates.create({
+        const newState = await User_states.create({
             ...req.body,
             user_id: req.session.user_id,
         });  
