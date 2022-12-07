@@ -2,9 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Users extends Model { }
+class User_states extends Model { }
 
-Users.init(
+User_states.init(
     // define columns
     {
         id: {
@@ -13,29 +13,20 @@ Users.init(
             primaryKey: true,
             allowNull: false
         },
-        username: {
+        users_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false
+        },
+        states_lived: {
             type: DataTypes.CHAR,
             allowNull: false
         },
-        password: {
+        states_visited: {
             type: DataTypes.CHAR,
             allowNull: false
         },
-        first_name: {
+        states_tovisit: {
             type: DataTypes.CHAR,
-            allowNull: false
-        },
-        last_name: {
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
-        email: {
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
-        created_date: {
-            type: DataTypes.DATE,
-            defaultValue: DataTypes.NOW,
             allowNull: false
         },
         deleted_flag: {
@@ -48,8 +39,8 @@ Users.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'users',
+        modelName: 'user_states',
     }
 );
 
-module.exports = Users;
+module.exports = User_states;
