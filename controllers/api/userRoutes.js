@@ -34,7 +34,7 @@ router.post('/', async (req, res) => {
     try {
         const newUser = await Users.create(req.body);
         req.session.save(() => {
-            req.session.user_id = userData.id;
+            req.session.user_id = newUser.id;
             req.session.logged_in = true
         })
         res.status(200).json(newUser);
@@ -44,19 +44,21 @@ router.post('/', async (req, res) => {
     }
 });
 
+// verify that post login and post logout work
+
 
 router.post('/login', async (req, res) => {
     try {
-    const userLogin = await Users.findOne({ where: { email: req.body.email } });
+    const userData = await Users.findOne({ where: { email: req.body.email } });
 
-    if (!userLogin) {
+    if (!userData) {
         res
         .status(400)
         .json({ message: 'Incorrect email or password, please try again' });
         return;
     }
 
-    const validPassword = await userLogin.checkPassword(req.body.password);
+    const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
         res
@@ -66,10 +68,10 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
-        req.session.user_id = userLogin.id;
+        req.session.user_id = userData.id;
         req.session.logged_in = true;
         
-        res.json({ user: userLogin, message: 'You are now logged in!' });
+        res.json({ user: userData, message: 'You are now logged in!' });
     });
 
     } catch (err) {
@@ -87,6 +89,19 @@ router.post('/logout', (req, res) => {
     res.status(404).end();
     }
 });
+
+
+router.post('/signup', async (req, res) => {
+    try {
+        const newSignup = await Users.create({
+            ...req.body,
+        });  
+        res.status(200).json(newSignup);
+    } catch (err) {
+        res.status(400).json(err);
+    }
+});
+
 
 
 module.exports = router;

@@ -1,20 +1,23 @@
 const router = require('express').Router();
+const { Users } = require('../models');
 
-router.get('/', (req, res) => {
-  res.render('main');
+router.get('/dashboard', async (req, res) => {
+  userData = await Users.findAll()
+  const users = userData.map((user) => user.get({ plain: true }));
+  res.render('dashboard', {
+      username: users
+  });
 });
 
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     if (req.session.logged_in) {
-      res.redirect('/');
+      res.redirect('/dashboard');
       return;
     }
 
     res.render('login');
   });
 
-  router.get('/dashboard', (req, res) => {
-    res.render('dashboard');
-  });
+
   
   module.exports = router;
