@@ -9,17 +9,17 @@
 </head>
 
 <body>
-    <nav class="container">
+    <nav class="bg-light">
         <div class="row">
-            <ul class="d-flex column">
-                <li class="list-unstyled m-3"><a href="/dashboard"></a>Dashboard</li>
+            <ul class="d-flex column nav justify-content-between">
+                <li class="list-unstyled mx-5 my-3"><a href="/dashboard"></a>Dashboard</li>
                 {{!-- {{#if logged_in}} --}}
-                <li class="list-unstyled m-3"><a href="/logout"></a>Logout</li>
+                <li class="list-unstyled mx-5 my-3"><a href="/logout"></a>Logout</li>
                 {{!-- {{/if}} --}}
             </ul>
         </div>
+        </nav>
         {{{body}}}
-    </nav>
 </body>
 
 </html>
