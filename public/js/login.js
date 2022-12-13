@@ -1,6 +1,8 @@
 const loginFormHandler = async (event) => {
     // Stop the browser from submitting the form so we can do so with JavaScript
+    console.log("string")
     event.preventDefault();
+    console.log("string")
   
     // Gather the data from the form elements on the page
     const email = document.querySelector('#email-login').value.trim();
