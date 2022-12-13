@@ -23,11 +23,11 @@ User_states.init(
         },
         states_visited: {
             type: DataTypes.CHAR,
-            allowNull: false
+            // allowNull: false
         },
         states_tovisit: {
             type: DataTypes.CHAR,
-            allowNull: false
+            // allowNull: false
         },
         deleted_flag: {
             type: DataTypes.DATE,
