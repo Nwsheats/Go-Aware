@@ -30,5 +30,5 @@ const livedInFormHandler = async (event) => {
 
   document
     .querySelector('#lived-in')
-    .addEventListener('change', livedInFormHandler);
+    .addEventListener('select', livedInFormHandler);
   
