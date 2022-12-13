@@ -1,173 +1,169 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/>
-      <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin="">
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+  <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin="">
     </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    {{!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-    <style>
+  <script src="/us-states.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <style>
     fieldset {
       border: 0;
     }
+
     label {
       display: block;
       margin: 30px 0 0 0;
     }
+
     .overflow {
       height: 200px;
     }
   </style>
-     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
-    <script>
-    $( function() {
-    $( "#lived-in" ).selectmenu();
- 
-    $( "#visited" ).selectmenu();
- 
-    $( "#visit" )
-      .selectmenu()
-      .selectmenu( "menuWidget" )
-      .addClass( "overflow" );
- 
-    $( "#name" ).selectmenu();
-  } ); --}}
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script>
+    $(function () {
+      $("#lived-in").selectmenu();
+
+      $("#visited").selectmenu();
+
+      $("#visit")
+        .selectmenu()
+        .selectmenu("menuWidget")
+        .addClass("overflow");
+
+      $("#name").selectmenu();
+    });
   </script>
-  </head>
-  <body class="bg-info">
-  <main class ="w-100">
+</head>
+
+<body class="bg-info">
+  <main class="w-100">
     <div class="row border border-5 border-primary">
-    <div class="col-5 bg-success">
+      <div class="col-5 bg-success">
         <h1 class="text-center">Go => AWARE!</h1>
-    </div>
-    <div class="col-7 bg-warning">
-      <h2 class="text-end">Conor Denis</h2>
-    </div>
+      </div>
+      <div class="col-7 bg-warning">
+        <h2 class="text-end">Conor Denis</h2>
+      </div>
     </div>
     <div class="w-100 h-100 d-flex">
-    <container class="col-5">
-    <div class="row d-flex justify-content-center">
-      <div class="col-8 border border-3 border-dark mt-2 bg-light">
-      <form action="#">
-        <fieldset>
-        <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
-        <div class="text-center">
-        <select name="lived-in" id="lived-in">
-        <option></option>
-        <option>Alabama</option>
-        {{!-- <option selected="selected">Alabama</option> --}}
-        <option>Alaska</option>
-        <option value="Arizona">Arizona</option>
-        <option>Arkansas</option>
-        <option>California</option>
-        </select>
+      <container class="col-5">
+        <div class="row d-flex justify-content-center">
+          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+            <form action="#">
+              <fieldset>
+                <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
+                <div class="text-center">
+                  <select name="lived-in" id="lived-in"></select>
+                </div>
+              </fieldset>
+              <div class="text-center m-3">
+                <button class="btn btn-secondary w-75" type="button" id="lived-in-search">SEARCH</button>
+              </div>
+          </div>
+          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+            <form action="#">
+              <fieldset>
+                <h4><label for="visited" class="text-center">STATES VISITED:</label></h4>
+                <div class="text-center">
+                  <select name="visited" id="visited"></select>
+                </div>
+              </fieldset>
+              <div class="text-center m-3">
+                <button class="btn btn-secondary w-75" type="button" id="visited-search">SEARCH</button>
+              </div>
+          </div>
+          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+            <form action="#">
+              <fieldset>
+                <h4><label for="visit" class="text-center">STATES TO VISIT:</label></h4>
+                <div class="text-center">
+                  <select name="visit" id="visit">
+                  </select>
+                </div>
+              </fieldset>
+              <div class="text-center m-3">
+                <button class="btn btn-secondary w-75" type="button" id="visit-search">SEARCH</button>
+              </div>
+          </div>
+          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+            <form action="#">
+              <fieldset>
+                <h4><label for="name" class="text-center">SEARCH BY NAME:</label></h4>
+                <div class="text-center"><select name="name" id="name"></div>
+                <option selected="selected">Conor Denis</option>
+
+                </select>
+              </fieldset>
+              <div class="text-center m-3">
+                <button class="btn btn-secondary w-75" type="button" id="name-search">SEARCH</button>
+              </div>
+          </div>
         </div>
-      </fieldset>
-    <div class="text-center m-3">
-        <button class="btn btn-secondary w-75" type="button" id="lived-in-search">SEARCH</button>
-        </div>
-      </div>
-    <div class="col-8 border border-3 border-dark mt-2 bg-light">
-      <form action="#" id="">
-      <fieldset>
-      <h4><label for="visited" class="text-center">STATES VISITED:</label></h4>
-      <div class="text-center"><select name="visited" id="visited"></div>
-      <option></option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option>Arizona</option>
-      <option>Arkansas</option>
-      <option>California</option>
-    </select>
-    </fieldset>
-    <div class="text-center m-3">
-        <button class="btn btn-secondary w-75" type="button" id="visited-search">SEARCH</button>
-        </div>
-      </div>
-      <div class="col-8 border border-3 border-dark mt-2 bg-light">
-      <form action="#">
-    <fieldset>
-    <h4><label for="visit" class="text-center">STATES TO VISIT:</label></h4>
-    <div class="text-center"><select name="visit" id="visit"></div>
-      <option></option>
-      <option>Alabama</option>
-      <option>Alaska</option>
-      <option>Arizona</option>
-      <option>Arkansas</option>
-      <option>California</option>
-    </select>
-    </fieldset>
-    <div class="text-center m-3">
-        <button class="btn btn-secondary w-75" type="button" id="visit-search">SEARCH</button>
-        </div>
-      </div>
-    <div class="col-8 border border-3 border-dark mt-2 bg-light">
-      <form action="#">
-    <fieldset>
-    <h4><label for="name" class="text-center">SEARCH BY NAME:</label></h4>
-    <div class="text-center"><select name="name" id="name"></div>
-      <option selected="selected">Conor Denis</option>
-      <option></option>
-      <option></option>
-      <option></option>
-      <option></option>
-    </select>
-    </fieldset>
-    <div class="text-center m-3">
-        <button class="btn btn-secondary w-75" type="button" id="name-search">SEARCH</button>
-        </div>
-      </div>
-      </div>
       </container>
       <container class="col-7 inline-block">
-<div class="row mb-5">
-  <div class="col-md-6">
-    {{!-- I removed the #each statement because we don't need each iteration, we just need one at a time. --}}
-    <h2>{{user.first_name}} {{user.last_name}}</h2>
-  </div>
-  <div class="col-md-6">
-    <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
-  </div>
-</div>
+        <div class="row mb-5">
+          <div class="col-md-6">
+            {{!-- I removed the #each statement because we don't need each iteration, we just need one at a time. --}}
+            <h2>{{user.first_name}} {{user.last_name}}</h2>
+          </div>
+          <div class="col-md-6">
+            <h3><a href="mailto:{{user.email}}">{{user.email}}</a></h3>
+          </div>
+        </div>
 
-<div class="col-9">
-{{!-- using @index to increment the div ids for each map --}}
-<div id="map{{@index}}" style="width:1000px; height:700px;" class="border border-5 border-dark rounded-pill"></div>
-</div>
-{{!-- Leaflet Example Map js below: --}}
-<script>
-var coords = [37.69, -94.23]; // the geographic center of our map
-var zoomLevel = 4; // the map scale. See: http://wiki.openstreetmap.org/wiki/Zoom_levels
+        <div class="col-9">
+          {{!-- using @index to increment the div ids for each map --}}
+          <div id="map{{@index}}" style="width:1000px; height:700px;" class="border border-5 border-dark rounded-pill">
+          </div>
+        </div>
+        {{!-- Leaflet Example Map js below: --}}
+        <script>
+          var coords = [37.69, -94.23]; // the geographic center of our map
+          var zoomLevel = 4; // the map scale. See: http://wiki.openstreetmap.org/wiki/Zoom_levels
 
-// we need to provide the map with some base map tiles. There are few free options.
-// we'll use Stamen Acetate, a muted base map good for overlaying data.
-// if you'd like to explore other base maps, see: http://developer.mapquest.com/web/products/open/map
-// if you use different tiles, be sure to update the attribution :)
-var undermap = new L.tileLayer("http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png");
-		
-		var map{{@index}} = new L.Map("map{{@index}}", { center: coords, zoom: zoomLevel })
-			.addLayer(undermap);
+          // we need to provide the map with some base map tiles. There are few free options.
+          // we'll use Stamen Acetate, a muted base map good for overlaying data.
+          // if you'd like to explore other base maps, see: http://developer.mapquest.com/web/products/open/map
+          // if you use different tiles, be sure to update the attribution :)
+          var undermap = new L.tileLayer("http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png");
+
+          var map{{@index}} = new L.Map("map{{@index}}", { center: coords, zoom: zoomLevel })
+            .addLayer(undermap);
 
 
-// Load States GeoJSON using JQuery and Leaflet
-$.getJSON('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson', function(data) {
-  L.geoJson(data).addTo(map{{@index}});
+          // Load States GeoJSON using JQuery and Leaflet
+          $.getJSON('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson', function (data) {
+            L.geoJson(data).addTo(map{{@index
+          }});
 });
-</script>
-</container>
-</div>
-</main>
-<script src="/js/stateslived.js"></script>
+          var theSelect = document.getElementById('visit');
+          var theLived = document.getElementById('lived-in');
+          var theVisited = document.getElementById('visited');
+          for (i = 0; i < 52; i++) {
+            let name = statesData.features[i].properties.name;
+            theSelect.options.add(new Option(name));
+            theLived.options.add(new Option(name));
+            theVisited.options.add(new Option(name));
+          }
+          
+        </script>
+      </container>
+      
+    </div>
+  </main>
 </body>
+
 </html>
