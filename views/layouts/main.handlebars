@@ -14,12 +14,13 @@
             <ul class="d-flex column nav justify-content-between">
                 <li class="list-unstyled mx-5 my-3"><a href="/dashboard"></a>Dashboard</li>
                 {{!-- {{#if logged_in}} --}}
-                <li class="list-unstyled mx-5 my-3"><a href="/logout"></a>Logout</li>
+                <a class="mx-5 my-3" href="/" onclick="logout()">Logout</a>
                 {{!-- {{/if}} --}}
             </ul>
         </div>
         </nav>
         {{{body}}}
+    <script src="/js/logout.js"></script>
 </body>
 
 </html>

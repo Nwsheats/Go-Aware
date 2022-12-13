@@ -66,31 +66,36 @@
               <fieldset>
                 <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
                 <div class="text-center">
-                  <select name="lived-in" id="lived-in"></select>
+                  <select name="lived-in" id="lived-in" class="info">
+                    <option></option>
+                  </select>
                 </div>
               </fieldset>
-              <div class="text-center m-3">
+              {{!-- <div class="text-center m-3">
                 <button class="btn btn-secondary w-75" type="button" id="lived-in-search">SEARCH</button>
-              </div>
-          </div>
-          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+              </div> --}}
+          {{!-- </div> --}}
+          {{!-- <div class="col-8 border border-3 border-dark mt-2 bg-light"> --}}
             <form action="#">
               <fieldset>
                 <h4><label for="visited" class="text-center">STATES VISITED:</label></h4>
                 <div class="text-center">
-                  <select name="visited" id="visited"></select>
+                  <select name="visited" id="visited" class="info">
+                    <option></option>
+                  </select>
                 </div>
               </fieldset>
-              <div class="text-center m-3">
+              {{!-- <div class="text-center m-3">
                 <button class="btn btn-secondary w-75" type="button" id="visited-search">SEARCH</button>
-              </div>
-          </div>
-          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+              </div> --}}
+          {{!-- </div>
+          <div class="col-8 border border-3 border-dark mt-2 bg-light"> --}}
             <form action="#">
               <fieldset>
                 <h4><label for="visit" class="text-center">STATES TO VISIT:</label></h4>
                 <div class="text-center">
-                  <select name="visit" id="visit">
+                  <select name="visit" id="visit" class="info">
+                    <option></option>
                   </select>
                 </div>
               </fieldset>
@@ -98,7 +103,7 @@
                 <button class="btn btn-secondary w-75" type="button" id="visit-search">SEARCH</button>
               </div>
           </div>
-          <div class="col-8 border border-3 border-dark mt-2 bg-light">
+          {{!-- <div class="col-8 border border-3 border-dark mt-2 bg-light">
             <form action="#">
               <fieldset>
                 <h4><label for="name" class="text-center">SEARCH BY NAME:</label></h4>
@@ -110,7 +115,7 @@
               <div class="text-center m-3">
                 <button class="btn btn-secondary w-75" type="button" id="name-search">SEARCH</button>
               </div>
-          </div>
+          </div> --}}
         </div>
       </container>
       <container class="col-7 inline-block">
@@ -164,6 +169,9 @@
       
     </div>
   </main>
+  <script src="js/stateslived.js"></script>
+  {{!-- <script src="js/statesvisited.js"></script>
+  <script src="js/tovisit.js"></script> --}}
 </body>
 
 </html>
