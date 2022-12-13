@@ -17,11 +17,15 @@ router.get('/:id', async (req, res) => {
 
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     try {
         const newState = await User_states.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });  
+            states_lived: req.body.stateLived,
+            states_visited: req.body.statesVisited,
+            states_tovisit: req.body.visitState,
+            users_id: 5,
+        });
+        console.log(newState, "newstate")  
         res.status(200).json(newState);
     } catch (err) {
         res.status(400).json(err);

@@ -12,9 +12,9 @@
  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin="">
-     </script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-     <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    {{!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <style>
     fieldset {
@@ -39,10 +39,10 @@
     $( "#visit" )
       .selectmenu()
       .selectmenu( "menuWidget" )
-        .addClass( "overflow" );
+      .addClass( "overflow" );
  
     $( "#name" ).selectmenu();
-  } );
+  } ); --}}
   </script>
   </head>
   <body class="bg-info">
@@ -60,26 +60,31 @@
     <div class="row d-flex justify-content-center">
       <div class="col-8 border border-3 border-dark mt-2 bg-light">
       <form action="#">
-    <fieldset>
-    <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
-    <div class="text-center"><select name="lived-in" id="lived-in"></div>
-      <option selected="selected">Alabama</option>
-      <option>Alaska</option>
-      <option>Arizona</option>
-      <option>Arkansas</option>
-      <option>California</option>
-    </select>
-    </fieldset>
+        <fieldset>
+        <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
+        <div class="text-center">
+        <select name="lived-in" id="lived-in">
+        <option></option>
+        <option>Alabama</option>
+        {{!-- <option selected="selected">Alabama</option> --}}
+        <option>Alaska</option>
+        <option value="Arizona">Arizona</option>
+        <option>Arkansas</option>
+        <option>California</option>
+        </select>
+        </div>
+      </fieldset>
     <div class="text-center m-3">
         <button class="btn btn-secondary w-75" type="button" id="lived-in-search">SEARCH</button>
         </div>
       </div>
     <div class="col-8 border border-3 border-dark mt-2 bg-light">
-      <form action="#">
+      <form action="#" id="">
       <fieldset>
       <h4><label for="visited" class="text-center">STATES VISITED:</label></h4>
       <div class="text-center"><select name="visited" id="visited"></div>
-      <option selected="selected">Alabama</option>
+      <option></option>
+      <option>Alabama</option>
       <option>Alaska</option>
       <option>Arizona</option>
       <option>Arkansas</option>
@@ -95,7 +100,8 @@
     <fieldset>
     <h4><label for="visit" class="text-center">STATES TO VISIT:</label></h4>
     <div class="text-center"><select name="visit" id="visit"></div>
-      <option selected="selected">Alabama</option>
+      <option></option>
+      <option>Alabama</option>
       <option>Alaska</option>
       <option>Arizona</option>
       <option>Arkansas</option>
@@ -161,6 +167,7 @@ $.getJSON('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admi
 </script>
 </container>
 </div>
-  </main>
-  </body>
+</main>
+<script src="/js/stateslived.js"></script>
+</body>
 </html>
