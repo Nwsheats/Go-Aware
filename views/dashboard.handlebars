@@ -66,7 +66,7 @@
               <fieldset>
                 <h4><label for="lived-in" class="text-center">STATES LIVED IN:</label></h4>
                 <div class="text-center">
-                  <select multiple="true" name="lived-in" id="lived-in" class="info">
+                  <select name="lived-in" id="lived-in" class="info" multiple="true">
                     <option></option>
                   </select>
                 </div>
@@ -74,13 +74,14 @@
               {{!-- <div class="text-center m-3">
                 <button class="btn btn-secondary w-75" type="button" id="lived-in-search">SEARCH</button>
               </div> --}}
-          {{!-- </div> --}}
+              {{!--
+          </div> --}}
           {{!-- <div class="col-8 border border-3 border-dark mt-2 bg-light"> --}}
             <form action="#">
               <fieldset>
                 <h4><label for="visited" class="text-center">STATES VISITED:</label></h4>
                 <div class="text-center">
-                  <select multiple="true" name="visited" id="visited" class="info">
+                  <select name="visited" id="visited" class="info" multiple="true">
                     <option></option>
                   </select>
                 </div>
@@ -88,13 +89,14 @@
               {{!-- <div class="text-center m-3">
                 <button class="btn btn-secondary w-75" type="button" id="visited-search">SEARCH</button>
               </div> --}}
-          {{!-- </div>
+              {{!--
+          </div>
           <div class="col-8 border border-3 border-dark mt-2 bg-light"> --}}
             <form action="#">
               <fieldset>
                 <h4><label for="visit" class="text-center">STATES TO VISIT:</label></h4>
                 <div class="text-center">
-                  <select multiple="true" name="visit" id="visit" class="info">
+                  <select name="visit" id="visit" class="info" multiple="true">
                     <option></option>
                   </select>
                 </div>
@@ -103,6 +105,7 @@
                 <button class="btn btn-secondary w-75" type="button" id="visit-search">SEARCH</button>
               </div>
           </div>
+          <div> new date ()</div>
           {{!-- <div class="col-8 border border-3 border-dark mt-2 bg-light">
             <form action="#">
               <fieldset>
@@ -131,29 +134,11 @@
 
         <div class="col-9">
           {{!-- using @index to increment the div ids for each map --}}
-          <div id="map{{@index}}" style="width:1000px; height:700px;" class="border border-5 border-dark rounded-pill">
+          <div id="map" style="width:1000px; height:700px;" class="border border-5 border-dark rounded-pill">
           </div>
         </div>
         {{!-- Leaflet Example Map js below: --}}
         <script>
-          var coords = [37.69, -94.23]; // the geographic center of our map
-          var zoomLevel = 4; // the map scale. See: http://wiki.openstreetmap.org/wiki/Zoom_levels
-
-          // we need to provide the map with some base map tiles. There are few free options.
-          // we'll use Stamen Acetate, a muted base map good for overlaying data.
-          // if you'd like to explore other base maps, see: http://developer.mapquest.com/web/products/open/map
-          // if you use different tiles, be sure to update the attribution :)
-          var undermap = new L.tileLayer("http://tile.stamen.com/toner-lite/{z}/{x}/{y}.png");
-
-          var map{{@index}} = new L.Map("map{{@index}}", { center: coords, zoom: zoomLevel })
-            .addLayer(undermap);
-
-
-          // Load States GeoJSON using JQuery and Leaflet
-          $.getJSON('https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_110m_admin_1_states_provinces_shp.geojson', function (data) {
-            L.geoJson(data).addTo(map{{@index
-          }});
-});
           var theSelect = document.getElementById('visit');
           var theLived = document.getElementById('lived-in');
           var theVisited = document.getElementById('visited');
@@ -163,14 +148,16 @@
             theLived.options.add(new Option(name));
             theVisited.options.add(new Option(name));
           }
-          
+
         </script>
       </container>
-      
+
     </div>
   </main>
+  <script src="/js/dashboard.js"></script>
   <script src="js/stateslived.js"></script>
-  {{!-- <script src="js/statesvisited.js"></script>
+  {{!--
+  <script src="js/statesvisited.js"></script>
   <script src="js/tovisit.js"></script> --}}
 </body>
 
