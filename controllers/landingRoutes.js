@@ -5,7 +5,8 @@ router.get('/dashboard', async (req, res) => {
   userData = await Users.findAll()
   const users = userData.map((user) => user.get({ plain: true }));
   res.render('dashboard', {
-      username: users
+      username: users,
+      date: new Date(),
   });
 });
 
