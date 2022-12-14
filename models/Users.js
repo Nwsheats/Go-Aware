@@ -16,10 +16,10 @@ Users.init(
             primaryKey: true,
             allowNull: false
         },
-        username: {
-            type: DataTypes.CHAR,
-            allowNull: false
-        },
+        // username: {
+        //     type: DataTypes.CHAR,
+        //     allowNull: true
+        // },
         password: {
             type: DataTypes.CHAR,
             allowNull: false
@@ -49,7 +49,7 @@ Users.init(
     {
     hooks: {
         beforeCreate: async (newUserData) => {
-          newUserData.password = await bcrypt.hash(newUserData.password, 10);
+          newUserData.password = await bcrypt.hash(newUserData.password, 8);
           return newUserData;
         }
     },
