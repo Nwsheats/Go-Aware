@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,7 +54,7 @@
         <h1 class="text-center">Go => AWARE!</h1>
       </div>
       <div class="col-7 bg-warning">
-        <h2 class="text-end">Conor Denis</h2>
+        <h2 class="text-end">{{this.first_name}} {{this.last_name}}</h2>
       </div>
     </div>
     <div class="w-100 h-100 d-flex">
@@ -102,7 +101,7 @@
                 </div>
               </fieldset>
               <div class="text-center m-3">
-                <button class="btn btn-secondary w-75" type="button" id="visit-search">SEARCH</button>
+                <button class="btn btn-secondary w-75" type="button" id="visit-search">SAVE</button>
               </div>
           </div>
           <div> {{date}} </div>
@@ -160,5 +159,10 @@
   <script src="js/statesvisited.js"></script>
   <script src="js/tovisit.js"></script> --}}
 </body>
-
 </html>
+
+
+{{!-- 1. In Save route, change to first query, then IF I find data, update it, if I don't find data, create it --}}
+{{!-- 2. In Dashboard.handlebars, grab userstate data for user, send it to Dashboard.handlebars --}}
+{{!-- 3. Now that we have that info, tie it in to dashboard.js file: set it so that IF this state is in the list
+pulled back from the database, make it selected. Hopefully that will kick in Denis' code. --}}
