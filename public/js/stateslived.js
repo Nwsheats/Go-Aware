@@ -16,19 +16,18 @@ const livedInFormHandler = async (event) => {
             stateLived: stateLived.value.trim(),
             statesVisited: statesVisited.value.trim(),
             visitState: visitState.value.trim()
-             }),
+            }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        // insert Leaflet function
+      
       }
 
       stateLived.selectedIndex = 0
       statesVisited.selectedIndex = 0
       visitState.selectedIndex = 0
     }
-//   };
 
 document
     .querySelector('.info')
