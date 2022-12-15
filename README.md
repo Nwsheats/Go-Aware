@@ -1,12 +1,52 @@
-# 15 Project 2: Interactive Full-Stack Application
+# GO > Aware
 
-Projects play a key role in your journey to becoming a full-stack web developer. As you enter the last phase of the boot camp, you’ll begin to apply for development jobs. If you want to land interviews, your portfolio must feature high-quality deployed examples of your work—-and you can use your finished projects for that very purpose.
+![Badge](https://img.shields.io/badge/LICENSE-MIT-pink?style=for-the-badge&logo=github)
 
-As your first opportunity to show employers your collaborative skills and coding abilities, this particular project will be a focal point of your portfolio. Employers want to see what you can do, but they also want to see how you work with other developers. The more examples of deployed collaborative work you have in your portfolio, the more likely you are to get an interview and a job.
+## Table of Contents
 
-## Project Requirements
+- [Description](#description)
+- [User Story](#user-story)
+- [Technologies Used](#technologies-used)
+- [Acceptance Criteria](#acceptance-criteria)
+- [Mock Up](#mock-up)
+- [Deployed URL Link](#deployed-url-link)
+- [GitHub Repository Link](#github-repository-link)
+- [License](#license)
+- [Credits](#credits)
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world full-stack application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+## Description
+
+An application that allows a user to create a map displaying US states lived in, visited and planning to visit. These selected states are then stored in a MySQL database
+along with other users of the site.
+
+## User Story
+
+```
+AS A Person curious about traveling and learning about the places people have lived and visited
+I WANT to select from a list of US states to indicate where I've lived, visited and intend to visit
+SO THAT the data can be saved in a MySQL database and also rendered on a map displayed in the browser.
+THEN other users of the website can do the same and create maps of their travels to share.
+
+```
+
+## Technologies Used
+
+```
+* Node.js
+* Express
+* Handlebars
+* MySQL Database
+* Sequelize ORM
+* Leaflet.js - NEW TECH!
+* Heroku / JawzDB
+```
+
+
+## Acceptance Criteria
+
+```
+
+Our group worked to create a real-world full-stack application that provides secure login using Express-Session and stores user entered info in a backend SQL Database hosted at Heroku and running JawzDB. We are using a new library, Leaflet.js in order to render user selected states onto an interactive map. Our project fulfils the following requirements:
 
 * Use Node.js and Express.js to create a RESTful API.
 
@@ -36,91 +76,37 @@ You and your group will use everything you’ve learned over the past six module
 
 * Have a professional README (with unique name, description, technologies used, screenshot, and link to deployed application).
 
-## Presentation Requirements
 
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
+```
 
-* Elevator pitch: a one minute description of your application
+## Mock-Up
 
-* Concept: What is your user story? What was your motivation for development?
+* Sign In Page
 
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
+![Sign In Page](./assets/sign-in.png)
 
-* Demo: Show your stuff!
+* Map Dashboard
 
-* Directions for Future Development
+![Map Dashboard](./assets/map-dashboard.png)
 
-* Links to the deployed application and the GitHub repository. Use the [Guide to Deploy with Heroku and MySQL](https://coding-boot-camp.github.io/full-stack/heroku/deploy-with-heroku-and-mysql) on The Full-Stack Blog if you need a reminder on how to deploy to Heroku.
+* MySQL ERD
 
-## Grading Requirements
+![MySQL ERD](./assets/go-aware-erd.png)
 
-This project is graded based on the following criteria:
+## License
+This application is utilizing the following License: MIT
 
-### Technical Acceptance Criteria: 25%
+## Deployed URL Link
 
-* Satisfies the following code requirements:
+https://go-aware.herokuapp.com/
 
-  * Application uses a Node.js and Express.js back end and uses both GET and POST routes for retrieving and adding new data.
+## GitHub Repository Link
 
-  * Application has a folder structure that meets the MVC paradigm and uses Handlebars.js as the template engine.
+https://github.com/Nwsheats/Go-Aware
 
-  * Application is backed by a MySQL database with a Sequelize ORM and protects API keys and sensitive information with environment variables.
-
-  * Application includes user authentication (express-session and cookies).
-
-  * Application uses at least one new library, package, or technology not covered in class.
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL on Heroku and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id-naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using a slide deck.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Full-Stack Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Credits
+```
+Nathan Sheats
+Ruharo Denis
+Conor Donnelly
+```
