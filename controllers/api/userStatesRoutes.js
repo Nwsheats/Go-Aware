@@ -16,7 +16,7 @@ router.get('/:id', async (req, res) => {
 });
 
 
-router.post('/', async (req, res) => {
+router.post('/', authorize, async (req, res) => {
     try {
         const newState = await User_states.create({
             include: [Users],
