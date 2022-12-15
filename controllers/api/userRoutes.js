@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Users, User_states } = require('../../models');
 const authorize = require('../../utils/auth');
 
-
+// users get all route
 router.get('/', authorize, async (req, res) => {
     try {
         const userData = await Users.findAll({
@@ -15,7 +15,7 @@ router.get('/', authorize, async (req, res) => {
     }
 });
 
-
+// users get by id route
 router.get('/:id', authorize, async (req, res) => {
     try {
         const oneUser = await Users.findOne({
@@ -29,7 +29,7 @@ router.get('/:id', authorize, async (req, res) => {
     }
 });
 
-
+// create new user route
 router.post('/', async (req, res) => {
     try {
         const newUser = await Users.create(req.body);
@@ -44,9 +44,7 @@ router.post('/', async (req, res) => {
     }
 });
 
-// verify that post login and post logout work
-
-
+// login creation route
 router.post('/login', async (req, res) => {
     try {
     const userData = await Users.findOne({ where: { email: req.body.email } });
@@ -79,7 +77,7 @@ router.post('/login', async (req, res) => {
     }
 });
 
-
+// logout route that destroys the session
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
     req.session.destroy(() => {

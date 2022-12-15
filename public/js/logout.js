@@ -1,3 +1,5 @@
+// JS function to handle logout events
+
 const logout = async () => {
     const response = await fetch('/api/users/logout', {
       method: 'POST',

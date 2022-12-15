@@ -2,6 +2,9 @@ const router = require('express').Router();
 const { Users, User_states } = require('../../models');
 const authorize = require('../../utils/auth');
 
+
+// userstates get by id route
+
 router.get('/:id', async (req, res) => {
     try {
         const userStateData = await User_states.findOne({
@@ -16,6 +19,8 @@ router.get('/:id', async (req, res) => {
 });
 
 
+// post route to create a new record in the userstates table
+
 router.post('/', authorize, async (req, res) => {
     try {
         const newState = await User_states.create({
@@ -23,7 +28,6 @@ router.post('/', authorize, async (req, res) => {
             states_lived: req.body.stateLived,
             states_visited: req.body.statesVisited,
             states_tovisit: req.body.visitState,
-            // fix users_id value below
             users_id: 1
         });
         console.log(newState, "newstate")  

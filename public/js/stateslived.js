@@ -1,8 +1,8 @@
+// the JS function that takes the userstates input on dashboard, sends them to the database via fetch, and pulls them back out to be appended
+
 const livedInFormHandler = async (event) => {
-    // Stop the browser from submitting the form so we can do so with JavaScript
     event.preventDefault();
-  
-    // Gather the data from the form elements on the page
+
     const stateLived = document.querySelector('#lived-in')
     const statesVisited = document.querySelector('#visited')
     const visitState = document.querySelector('#visit')
@@ -42,6 +42,7 @@ const livedInFormHandler = async (event) => {
       visitState.selectedIndex = 0
     }
 
+// enables the search button again 
 document
     .querySelector('.info')
     .addEventListener('change', function() {
@@ -53,7 +54,7 @@ document
       }
     });
 
-
+// disables the search button
   document.getElementById("visit-search").disabled = true;
 
   document

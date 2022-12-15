@@ -1,15 +1,14 @@
+// JS function to handle login events
+
 const loginFormHandler = async (event) => {
-    // Stop the browser from submitting the form so we can do so with JavaScript
     console.log("string")
     event.preventDefault();
     console.log("string")
   
-    // Gather the data from the form elements on the page
     const email = document.querySelector('#email-login').value.trim();
     const password = document.querySelector('#password-login').value.trim();
   
     if (email && password) {
-      // Send the e-mail and password to the server
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),

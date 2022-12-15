@@ -1,14 +1,9 @@
+// this is the JavaScript for leaflet and map colors
+
 var coords = [37.69, -94.23]; // the geographic center of our map
 var zoomLevel = 4; // the map scale. See: http://wiki.openstreetmap.org/wiki/Zoom_levels
 
-
-
-
-// we need to provide the map with some base map tiles. There are few free options.
-// we'll use Stamen Acetate, a muted base map good for overlaying data.
-// if you'd like to explore other base maps, see: http://developer.mapquest.com/web/products/open/map
-// if you use different tiles, be sure to update the attribution :)
-
+// specify stores for the basemap tiles in leaflet
 
 var undermap = new L.tileLayer("https://stamen-tiles.a.ssl.fastly.net/toner/{z}/{x}/{y}.png");
 
