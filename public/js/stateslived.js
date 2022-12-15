@@ -28,9 +28,14 @@ const livedInFormHandler = async (event) => {
         const livedData = data.states_lived;
         const visitedData = data.states_visited;
         const toVisitData = data.states_tovisit;
+        
+        const livedList = $('#lived-list');
+        const visitedList = $('#visited-list');
+        const tovisitList = $('#tovisit-list');
 
-
-      
+        livedList.append('<br> <h4>' + livedData + '</h4>');
+        visitedList.append('<br> <h4>' + visitedData + '</h4>');
+        tovisitList.append('<br> <h4>' + toVisitData + '</h4>');
 
       stateLived.selectedIndex = 0
       statesVisited.selectedIndex = 0

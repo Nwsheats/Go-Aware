@@ -62,13 +62,26 @@
                 <button class="btn btn-secondary w-75" type="button" id="visit-search">SAVE</button>
               </div>
           </div>
-          <div class='col-8 border border-3 border-dark mt-2 bg-light'><h4> {{date}} </h4></div>
-        </div>
+          <div class="row d-flex mb-5">
+          <div class="row justify-content-around">
+                <div class="col-2 m-3 bg-light border border-3 border-dark text-dark" style="width:200px" id="lived-list">
+                  <h4>LIVED:</h4>
+                </div>
+                <div class="col-2 m-3 bg-light border border-3 border-dark text-dark" style="width:200px" id="visited-list">
+                  <h4>VISITED:</h4>
+                </div>
+                <div class="col-2 m-3 bg-light border border-3 border-dark text-dark" style="width:200px" id="tovisit-list">
+                  <h4>TO VISIT:</h4>
+                </div>
+          </div>
+          </div>
+          </div>
       </container>
-      <container class="col-7 inline-block">
-        <div class="row mb-5">
+      <container class="col-7">
+        <div class="col text-center">
+        <div class='col-8 border border-3 border-dark mt-2 bg-light'><h4 class="text-center"> {{date}} </h4></div>
         </div>
-        <div class="col-9">
+        <div class="col-9 mt-2">
           {{!-- using @index to increment the div ids for each map --}}
           <div id="map" style="width:1000px; height:700px;" class="border border-5 border-dark rounded-pill">
           </div>
