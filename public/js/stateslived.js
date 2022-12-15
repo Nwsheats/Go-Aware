@@ -20,9 +20,17 @@ const livedInFormHandler = async (event) => {
         headers: { 'Content-Type': 'application/json' },
       });
   
-      if (response.ok) {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }  
+        const data = await response.json();
+        console.log("data", data);
+        const livedData = data.states_lived;
+        const visitedData = data.states_visited;
+        const toVisitData = data.states_tovisit;
+
+
       
-      }
 
       stateLived.selectedIndex = 0
       statesVisited.selectedIndex = 0
