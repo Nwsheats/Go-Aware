@@ -1,3 +1,5 @@
+// JS function to handle register/signup events
+
 const signupFormHandler = async (event) => {
     console.log('string')
     event.preventDefault();

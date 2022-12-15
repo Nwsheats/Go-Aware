@@ -5,7 +5,7 @@ const sequelize = require('../config/connection.js');
 class User_states extends Model { }
 
 User_states.init(
-    // define columns
+
     {
         id: {
             type: DataTypes.INTEGER,

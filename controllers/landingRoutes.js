@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Users, User_states } = require('../models');
 const authorize = require('../utils/auth');
 
+// route to get and render the dashboard
 router.get('/dashboard', authorize, async (req, res) => {
   userData = await Users.findAll()
   const users = userData.map((user) => user.get({ plain: true }));
@@ -11,6 +12,7 @@ router.get('/dashboard', authorize, async (req, res) => {
   });
 });
 
+// route to get all the userstate data
 router.get('/dashboard', authorize, async (req, res) => {
   const userStateData = await User_states.findAll({
     where: { id: req.params.users_id },
@@ -23,7 +25,7 @@ router.get('/dashboard', authorize, async (req, res) => {
     });
   });
 
-
+// route to login if not logged in and route to dashboard if logged in
 router.get('/', (req, res) => {
     if (req.session.logged_in) {
       res.redirect('dashboard');
@@ -33,7 +35,7 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-
+// route to make the login page render the login page
 router.get('/login', (req, res) => {
   if (req.session.logged_in) {
     res.redirect('dashboard');
@@ -44,6 +46,7 @@ router.get('/login', (req, res) => {
 })
 
 
+// route to render signup page
 router.get('/signup', (req, res) => {
   res.render('signup');
 });

@@ -13,6 +13,8 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({ helpers });
 
+// boilerplate to create a cookie session
+
 const sess = {
   secret: 'Super secret secret',
   cookie: {
